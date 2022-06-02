@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Current News</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  <body>
+  <div>
+    <center class="p-3 mb-2 bg-warning text-dark"><h2>Current News</h2>
+    </center>
+  </div>
+
+<div class="bg-success p-2 text-dark bg-opacity-25">
+
+    {% for i in act_dict.articles %}
+
+  <div class="container" >
+    <div class="card" style="width: 40rem" >
+  <img src="{{i.urlToImage}} " class="card-img" alt="Current News">
+  <div class="card-body">
+    <p class="card-text">Title:{{i.title}}</p>
+
+  </div>
+  </div >
+    <div class="container my-3">
+    <h5>Description:{{i.description}}</h5>
+    <p>Author:{{i.author}}, Date:{{i.publishedAt}}</p>
+    <a href={{i.url}} target="_blank">URL:{{i.url}}</a>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>
